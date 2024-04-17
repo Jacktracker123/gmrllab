@@ -1,0 +1,78 @@
+<form action="" method="POST">
+    {% csrf_token %}
+
+<a href="" data-bs-toggle="modal" data-bs-target="#addBranchDateTimeModal" class="btn" style="color: white;background-color: #85ba32;"><b>Add Branch Timings</b></a>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="addBranchDateTimeModal" tabindex="-1" aria-labelledby="addBranchDateTimeModal" aria-hidden="true">
+    <div class="modal-dialog">
+        
+      <div class="modal-content">
+        <div class="modal-header bg-info">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Branch Timings</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label" hidden>Branch name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Branch name" name="name" value="{{data}}" hidden>
+              </div>
+                <div class="mb-3">
+                  <label for="opening_hours" class="form-label">Branch Opening hours</label>
+                  <input type="text" id="time" name="opening_hours" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="time" class="form-label">Branch Closing hours</label>
+                  <input type="text" id="time" name="closing_hours" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Branch Opening week</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Branch name" name="opening_week" required>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Branch Closing week</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Branch name" name="closing_week">
+                </div>
+        </div>
+        <div class="modal-footer bg-info">
+          <button type="button" class="btn bg-danger text-white" data-bs-dismiss="modal">Close</button>
+          <button type="submit" name="save" value="{{i.id}}" class="btn btn-primary">Submit</button>
+        
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    // Get the current time
+
+    flatpickr("#time", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "h:i K",
+        time_24hr: false,
+    });
+});
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">

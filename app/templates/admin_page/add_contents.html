@@ -1,0 +1,52 @@
+<form action="" method="POST">
+    {% csrf_token %}
+
+<a href="" data-bs-toggle="modal" data-bs-target="#addnewcontentModal" class="btn px-3 btn-lg" style="color: red;background-color: yellow;"><b>Add package contents</b></a>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="addnewcontentModal" tabindex="-1" aria-labelledby="addnewcontentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        
+      <div class="modal-content">
+        <div class="modal-header bg-info">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Contents</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label" hidden>Package name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Package name" name="name" id="name" value="{{data}}" hidden>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Package content</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Package Content" name="content" id="content">
+              </div>
+        </div>
+        <div class="modal-footer bg-info">
+          <button type="button" class="btn bg-danger text-white" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" name="save">Submit</button>
+        
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+

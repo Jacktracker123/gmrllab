@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Caprasimo&family=Dancing+Script:wght@600;700&family=EB+Garamond:wght@600&family=Lemon&family=Lobster&family=Mukta:wght@300&family=Oswald:wght@300&family=Raleway:wght@100&family=Salsa&family=Shadows+Into+Light&display=swap');
+a{
+    text-decoration: none;
+}
+
+.product-card {
+    position: relative;
+    width: 31%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* This will hide any content that overflows the card */
+    height: 400px; /* Set a fixed height for all product cards */
+}
+
+.product-image {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 250px; /* Set a specific height for the image */
+    object-fit: cover; /* Ensure the image is contained within the specified height */
+}
+
+.product-details {
+    padding: 16px;
+}
+
+.product-title {
+    margin: 0;
+    font-size: 18px;
+    text-decoration: none;
+    /* font-weight: bold; */
+}
+
+
+.price{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    padding: 2px 10px 2px 10px;
+    font-size: 1.5rem;
+    color:black;
+    font-weight: bolder;
+    background-color: white;
+    border-radius: .5rem;
+}
+
+.option-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.appointment-heading{
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+    margin: 50px 0px 50px 0px;
+}
+
+.package-price{
+    background-color: #22419c;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 12px 0px;
+  }
+
+  .pack-img{
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+.pack-lists li{
+    color: #363636;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 5px;
+  }
+
+  
+  .contact-i{
+    width: 80px;
+    height: 80px;
+    background: #22419c;
+    display: inline-block;
+    line-height: 85px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition-duration: 0.3s;
+  }
+  
+  .contact-i i{
+    color: #fff;
+    font-size: 34px;
+  }
+  
+  .contact-card{
+    width: 100%;
+    text-align: center;
+    padding: 25px 10px;
+    min-height: 300px;
+    border: 1px solid #e4e8f3;
+    border-bottom: 2px solid #22419c;
+    transition: background-color 0.3s, border-bottom 0.3s;
+    margin-top: 50px;
+  }
+  
+  .contact-card:hover{
+    border-bottom: 2px solid #85ba32;
+  }
+  
+  .contact-i:hover{
+    background-color: #85ba32;
+  }
+  /* Add this to your existing CSS or in a new style block */
+  
+  .contact-card {
+    position: relative;
+    transition: background-color 0.3s, border-bottom 0.3s;
+  }
+  
+  .contact-card:hover {
+    border-bottom: 2px solid #85ba32;
+  
+  }
+  
+  .contact-card:hover .contact-i {
+    background-color: #85ba32;
+  
+  }
+  
+  
+  .branch-packages{
+    margin-top: 100px;
+  }
+
+  .branch-packages .product-card {
+    height: 330px; /* Set a fixed height for all product cards */
+}
+
+.branch-packages .product-title {
+    margin-top: 13px;
+   
+    font-size: 18px;
+    text-decoration: none;
+    /* font-weight: bold; */
+}
+
+.status{
+    display: flex;
+    gap: 20px;
+}
+
+.add-timing{
+  display: flex;
+  justify-content: end;
+  font-size: 14px;
+}

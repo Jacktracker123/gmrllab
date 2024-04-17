@@ -1,0 +1,89 @@
+{% load static %}
+<a href="" data-bs-toggle="modal" data-bs-target="#PaymentModal"> <h5 class="package-price">From:  <i class="fa fa-rupee"></i>  {{data.price}}</h5></a>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="PaymentModal" tabindex="-1" aria-labelledby="PaymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        
+      <div class="modal-content">
+        <div class="modal-header bg-info">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Payment</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="{% url 'payment' name=data.name %}" method='POST'>
+          {% csrf_token %}
+        <div class="modal-body">
+          
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label" hidden>User Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Package" name="username" value="{{user.username}}" required hidden>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label" hidden>Package Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Package" name="package_name" value="{{data.name}}" required hidden>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label" hidden>Branch Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Branch" name="branch_name" value="{{data.branch}}" required hidden>
+          </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name" name="name" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Package Price</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Package Price" name="amount" value="{{data.price}}" required>
+              </div>
+              
+        </div>
+
+        <div class="modal-footer bg-info">
+          <button type="button" class="btn bg-danger text-white" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Pay Now</button>
+        
+        </div>
+        </form>
+      </div>
+    </div>
+  
+  </div>
+
+
+
+
+  <form method="POST">
+    {% csrf_token %}
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+    var options = {
+        key: "{{razorpay_key}}",
+        amount: "{{order.amount}}",
+        currency: "INR",
+        name: "{{order.name}}",
+        description: "Test Transaction",
+        image: "{% static 'admin_page/img/gmrl-logo.svg.png' %}",
+        order_id: "{{order.provider_order_id}}",
+        callback_url: "{{callback_url}}",
+        redirect: true,
+        prefill: {
+            "name": "Gaurav Kumar",
+            "email": "gaurav.kumar@example.com",
+            "contact": "9999999999"
+        },
+        notes: {
+            "address": "Razorpay Corporate Office"
+        },
+        theme: {
+            "color": "#3399cc"
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+    </script>
+    <input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+  

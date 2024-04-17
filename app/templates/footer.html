@@ -1,0 +1,161 @@
+{% load static %}
+<div class="container-xxl">
+<div class="footer-banner ps-xxl-5 pe-xxl-5 ps-xl-5 pe-xl-5">
+<div class="container-xxl">
+
+    <div class="row">
+
+        <div class="col-lg-8 col-md-12 left-foot pt-3 pb-1">
+        
+        <div class="row">
+        
+        <div class="col-lg-7 col-md-12 d-flex justify-content-center align-items-center">
+        <span class="d-flex justify-content-center align-items-center">
+        <i class="fa fa-calendar foot-i foot-top"></i>
+        </span>
+        <div class="foot-content d-flex flex-column justify-content-center ms-4 foot-top">
+          <h4 class="foot-top">Make an Appointment</h4>
+          <p class="foot-top">Call <b>+91 81388 62626</b> or click Book Now to secure your appointment.</p>
+        </div>
+        
+        
+        
+        </div>
+        
+        
+        <div class="col-lg-5 col-md-12 d-flex justify-content-center align-items-center">
+          <a href="/appointment/">
+            <button type="button" class="btn btn-primary rounded-pill ps-4 pe-4 intro-btn mt-4 mb-4 foot-btn foot-top">Book Now</button>
+          </a>
+        </div>
+        
+        </div>
+        
+        </div>
+        
+        
+        
+        <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center right-foot pt-4 pb-3 ">
+          <span class="d-flex justify-content-center align-items-center">
+          <i class="fa fa-stopwatch foot-i"></i>
+          </span>
+        <div class="emg-content ms-4">
+          <h4>Opening Hours</h4>
+          <h6>Mon - Sat : 6:30pm to 6:00pm <br>
+            Sun : 6:30am - 12:30pm</h6>
+        </div>
+        </div>
+        
+        
+        
+        
+
+
+        <div class="footer-links mt-5">
+<div class="row">
+         <div class="col-lg-2 col-md-3 col-sm-12 foot-img">
+
+<img src="{% static 'img/gmrl-footer-logo.svg' %}" alt="" width="208" height="110">
+
+         </div>
+
+
+
+         <div class="col-lg-2 footer-menu foot-half foot-last">
+         
+          <ul type="none">
+            <li> <h4 class="mb-3">Quick Links</h4></li>
+            <li><a href="../" aria-current="page">Home</a></li>
+  <li><a href="/about/">About Us</a></li>
+  <li ><a href="/package/">Packages</a></li>
+  <li><a href="/test/">Tests</a></li>
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/testimonials/">Testimonials</a></li>
+  <li><a href="/branches/">Branches</a></li>
+  <li><a href="/contact-us/">Contact Us</a></li>
+  <li><a rel="privacy-policy" href="/privacy-policy/">Privacy Policy</a></li>
+  <li><a href="/terms&conditions/">Terms &#038; Conditions</a></li>
+  </ul></div>
+
+  <div class="col-lg-2 footer-menu foot-half foot-last">
+    <ul type="none">
+    <li>
+    <h4 class="mb-3">Departments</h4>
+
+    </li>
+                            <li><a href="/department/">Pathology</a></li>
+                  <li><a href="/department/">Biochemistry</a></li>
+                  <li><a href="/department/">Microbiology</a></li>
+                  <li><a href="/department/">Serology</a></li>
+                  <li><a href="/department/">Immunology</a></li>
+                  <li><a href="/department/">Radiology</a></li>
+                  <li><a href="/department/">Molecular Biology</a></li>
+                              </ul>
+  </div>
+
+  <div class="col-lg-3 col-md-3 footer-menu foot-last">
+    <ul type="none">
+      <li>
+    <h4 class="mb-3">Our Packages</h4>
+  
+      </li>
+      {% for i in package %}
+      {% if i.branch.status %}
+                  
+<li><a href="{% url 'packages_view' name=i.name %}">{{i.name}}</a></li>
+
+
+
+    {% endif %}
+    {% endfor %}
+                              </ul>
+  </div>
+
+
+
+  <div class="col-lg-3 col-md-3 col-sm-12 foot-touch">
+    <h4 class="mb-3">Get In Touch</h4>
+    <p>GMRL Laboratories
+    Chambakkara, Ernakulam, 
+    Ernakulam - 682011</p>
+    <a href="tel:+918138862626"><p>+91 81388 62626</p></a>
+    <a href="tel:048400000000"><p>0484 0000 0000</p></a>
+    <a href=""><p>info@gmrllabs.com</p></a>
+
+    <ul class="socialmediafoot" type="none">
+      <li><a href="https://www.facebook.com/" class="fb"><i class="fa fa-facebook-f"></i></a></li>
+      <li><a href="https://twitter.com/" class="tw"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="https://in.linkedin.com/" class="li"><i class="fa fa-linkedin-in"></i></a></li>
+      <li><a href="https://www.instagram.com/" class="in"><i class="fa fa-instagram"></i></a></li>
+    </ul>
+  </div>
+
+        </div>
+        </div>    
+        
+    </div> 
+</div>
+</div>
+</div>
+      
+        
+        <div class="mt-5 p-2 foot-copy" style="background-color: #d9dde9">
+          <div class="copy-con d-flex justify-content-between ps-3 pe-3">
+        <p class="copyright-p text-center mt-2">© 2024 GMRL Labs. All Right Reserved.</p>
+        <p class="copyright-p text-center mt-2">Crafted by <a href="">Ooly Web Studio</a></p>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+

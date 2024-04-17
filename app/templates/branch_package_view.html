@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+    {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <title>Bootstrap demo</title> -->
+    <title>Best laboratory in Ernakulam</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/gmrl-logo.svg.jpg' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@11/-bundle.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  
+  </head>
+  <body>
+    {% if messages%}
+    {% for message in messages %}
+    <script>alert('{{message}}')</script>
+    {% endfor %}
+    {% endif %}
+<!-- introduction start -->
+<section class="introduction-section introduction-section-inner">
+ 
+  
+  <div class="row">
+
+
+<!-- introduction row col-1 start -->
+<div class="col-lg-6 col-md-12">
+
+<div class="container intro-caption intro-caption-inner">
+
+<h1 class="intro-heading">
+Packages
+</h1>
+</div>
+
+
+</div>
+  <!-- introduction row col-1 end -->
+
+  <!-- introduction row col-2 start -->
+<div class="col-lg-6 col-md-12 intro-img-sec">
+  <img src="{% static 'img/banner2.jpg' %}" alt="" style="z-index: 1050;opacity: 1;" class="intro-inner-img">
+</div>
+  <!-- introduction row col-2 end -->
+
+ </div>
+
+
+<header>
+{% include 'header.html' %}
+</header>
+</section>
+
+<section class="package_view container-lg">
+<form method="POST" action="{% url 'payment' name=data.name %}">
+  {% csrf_token %}
+<div class="row">
+
+
+<div class="col-lg-8 col-md-12">
+
+<h2>{{data}}</h2>
+
+<ul class="pack-lists">
+
+    {% for i in subpackage %}
+    {% if i.name == data %}
+      <li>{{i.content}}</li>
+      {% endif %}
+{% endfor %}
+</ul>
+
+
+<p class="mt-3"><i><b>NOTE:</b> Fasting Sample is Preferred</i></p>
+<p class="mt-4"><strong>Home Collection Available</strong> <br>(Book 1 Day in Advance, *Service Charge Applicable)</p>
+</ul>
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="col-lg-4 col-md-12">
+
+{% include 'package_price.html' %}
+
+
+  
+<!-- <h5 class="package-price">From:  <i class="fa fa-rupee"></i>  {{data.price}}</h5> -->
+
+<img src="{{data.image}}" alt="" class="pack-img">
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- Package-section start -->
+
+<section class="package">
+  <div class="container-lg">
+  
+    <div class="pack-head">
+  <h1 class="pack-h text-center">
+    Other Packages
+  </h1>
+  <p class="text-center">Explore a curated selection of premium packages designed to elevate your experience and meet your unique needs.</p>
+    </div>
+  
+  
+  </div>
+  
+
+  <div class="pack-slider">
+  
+    <!-- image slide start -->
+    
+    <div class="container-lg swiper review-container mt-5 d-flex justify-content-center">
+      <div class="slide-container-2">
+        <div class="card-wrapper swiper-wrapper">
+    
+          <a href="">
+          <div class="card swiper-slide card-1">
+            <div class="" style="border: none;">
+              <div class="enquiry-img">
+                <div class="en-imgs">
+              <img src="{% static 'img/executive-package.jpg' %}" class="img-fluid en-img" alt="...">
+    
+                </div>
+                <span class="en-span"><h5>From: <i class="fa fa-rupee"></i> 2499</h5></span>
+              <div class="middle">
+                <a href=""><i class="fa fa-link text-white fs-2"></i></a>
+               </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text ">Executive Package</p>
+               <i class="fa fa-angle-right fs-3"></i>
+              </div>
+            </div>
+          </div>
+          </a>
+    
+          <a href="">
+          <div class="card swiper-slide card-2">
+            <div class="" style="border: none;">
+              <div class="enquiry-img">
+                <div class="en-imgs">
+              <img src="{% static 'img/package2.jpg' %}" class="img-fluid en-img" alt="...">
+                </div>
+                <span class="en-span"><h5>From: <i class="fa fa-rupee"></i> 699</h5></span>
+              <div class="middle">
+                <a href=""><i class="fa fa-link text-white fs-2"></i></a>
+               </div>
+                </div>
+              <div class="card-body">
+                <p class="card-text ">Ayush General</p>
+               <i class="fa fa-angle-right fs-3"></i>
+              </div>
+            </div>
+          </div>
+          </a>
+    
+          <a href="">
+          <div class="card swiper-slide card-3">
+            <div class="" style="border: none;">
+              <div class="enquiry-img">
+                <div class="en-imgs">
+              <img src="{% static 'img/package3.jpg' %}" class="img-fluid en-img" alt="...">
+                </div>
+                <span class="en-span"><h5>From: <i class="fa fa-rupee"></i> 999</h5></span>
+              <div class="middle">
+                <a href=""><i class="fa fa-link text-white fs-2"></i></a>
+               </div>
+                </div>
+              <div class="card-body">
+                <p class="card-text ">Ayush Silver Plan</p>
+               <i class="fa fa-angle-right fs-3"></i>
+              </div>
+            </div>
+          </div>
+          </a>
+    
+          <a href="">
+          <div class="card swiper-slide card-4">
+            <div class="" style="border: none;">
+              <div class="enquiry-img">
+                <div class="en-imgs">
+              <img src="{% static 'img/package4.jpg' %}" class="img-fluid en-img" alt="...">
+                </div>
+                <span class="en-span"><h5>From: <i class="fa fa-rupee"></i> 999</h5></span>
+              <div class="middle">
+                <a href=""><i class="fa fa-link text-white fs-2"></i></a>
+               </div>
+                </div>
+              <div class="card-body">
+                <p class="card-text text-center">Ayush Diabetic & Kidney Care</p>
+               <i class="fa fa-angle-right fs-3"></i>
+              </div>
+            </div>
+          </div>
+          </a>
+    
+          <a href="">
+          <div class="card swiper-slide card-4">
+            <div class="" style="border: none;">
+              <div class="enquiry-img">
+                <div class="en-imgs">
+              <img src="{% static 'img/package5.jpg' %}" class="img-fluid en-img" alt="...">
+                </div>
+                <span class="en-span"><h5>From: <i class="fa fa-rupee"></i> 1700</h5></span>
+              <div class="middle">
+                <a href=""><i class="fa fa-link text-white fs-2"></i></a>
+               </div>
+                </div>
+              <div class="card-body">
+                <p class="card-text ">Ayush Gold</p>
+               <i class="fa fa-angle-right fs-3"></i>
+              </div>
+            </div>
+          </div>
+          </a>
+    
+          <a href="">
+          <div class="card swiper-slide card-4">
+            <div class="" style="border: none;">
+              <div class="enquiry-img">
+                <div class="en-imgs">
+              <img src="{% static 'img/cardiac.jpg' %}" class="img-fluid en-img" alt="...">
+                </div>
+                <span class="en-span"><h5>From: <i class="fa fa-rupee"></i> 4900</h5></span>
+              <div class="middle">
+                <a href=""><i class="fa fa-link text-white fs-2"></i></a>
+               </div>
+                </div>
+              <div class="card-body">
+                <p class="card-text ">Advanced Cardiac Risk Cover Package</p>
+               <i class="fa fa-angle-right fs-3"></i>
+              </div>
+            </div>
+          </div>
+          </a>
+    
+    
+          
+        </div>
+      </div>
+      <div class="swiper-pagination swiper-pagination-2"></div>
+    </div>
+    
+    
+    <!-- image slide end -->
+    
+    </div>
+    
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<footer class="mt-5">
+    {% include 'footer.html' %}
+  </footer>
+  <a href=""><i class="fa fa-whatsapp whatsapp-icon"></i></a>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@11/-bundle.min.js"></script>
+  
+  
+  
+      <script src="https://cdn.jsdelivr.net/npm/@11/-bundle.min.js"></script>
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+  </html>

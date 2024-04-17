@@ -1,0 +1,64 @@
+<a href="" data-bs-toggle="modal" data-bs-target="#updatePackageModal_{{i.id}}" class="btn px-3 btn-lg bg-success text-white"><b>Update</b></a>
+<a href="" data-bs-toggle="modal" data-bs-target="#deletePackageModal_{{i.id}}" class="btn px-3 btn-lg bg-danger text-white"><b>Delete</b></a>
+
+                        
+                    <!-- update student modal -->
+                    <div class="modal fade" id="updatePackageModal_{{i.id}}" tabindex="-1" aria-labelledby="updatePackageModal_{{i.id}}Label" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <div class="modal-content">
+                                    <div class="modal-header bg-info">
+                                    <h1 class="modal-title fs-5" id="updatePackageModal_{{i.id}}Label">Update Packages</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1_{{i.id}}" class="form-label">Package name</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1_{{i.id}}" placeholder="Enter Package name" name="name" value="{{i.name}}">
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="exampleFormControlInput1_{{i.id}}" class="form-label">Package price</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1_{{i.id}}" placeholder="Enter Package price" name="price" value="{{i.price}}">
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="exampleFormControlInput1_{{i.id}}" class="form-label">Package image</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1_{{i.id}}" placeholder="Package image" name="image" value="{{i.image}}">
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="exampleFormControlInput1_{{i.id}}" class="form-label">Branch name</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1_{{i.id}}" placeholder="Enter branch name" name="branch" value="{{i.branch}}">
+                                          </div>
+                                    </div>
+                                    <div class="modal-footer bg-info">
+                                        <button type="button" class="btn bg-danger text-white" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-success" name="update" value="{{i.id}}">Update package</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- delete student modal -->
+                    <div class="modal fade" id="deletePackageModal_{{i.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deletePackageModal_{{i.id}}Label" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value="{{i.id}}">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p>Are you sure? you want to delete {{i.name}} package</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-danger" name="delete" value="{{i.id}}">Delete package</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    

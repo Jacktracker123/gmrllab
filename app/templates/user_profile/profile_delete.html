@@ -1,0 +1,20 @@
+<a href="" data-bs-toggle="modal" data-bs-target="#deleteProfileModal_{{i.id}}" class="btn px-3 btn-lg bg-danger text-white profile-d"><i class="fa fa-trash fs-3"></i></a>
+
+<!-- delete user-profile modal -->
+<div class="modal fade" id="deleteProfileModal_{{i.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteProfileModal_{{i.id}}Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{i.id}}">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Are you sure? you want to delete your profile</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger" name="delete" value="{{profiles.id}}">Delete Profile</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
