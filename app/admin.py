@@ -3,7 +3,7 @@ from . models import *
 # Register your models here.
 
 class Appointment_Display(admin.ModelAdmin):
-    list_display=['name','email','phone','date','time','age','gender','address','message']
+    list_display=['name','email','phone','branch','date','time','age','gender','address','message']
 admin.site.register(Appointment,Appointment_Display)
 
 class Contact_Display(admin.ModelAdmin):

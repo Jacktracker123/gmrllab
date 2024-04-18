@@ -276,15 +276,28 @@ def appointment(request):
 
     if request.method == "POST":
         if 'save' in request.POST:
-            form = Appointment_form(request.POST)
-            if form.is_valid():
-                form.save()
-                messages.success(request, 'Appointment Booking Successful')
-                return redirect('appointment')
+            name=request.POST.get('name')
+            email=request.POST.get('email')
+            phone=request.POST.get('phone')
+            date=request.POST.get('date')
+            time=request.POST.get('time')
+            age=request.POST.get('age')
+            gender=request.POST.get('gender')
+            address=request.POST.get('address')
+            message=request.POST.get('message')
+            branch_name=request.POST.get('branch')
+            branch=Branch.objects.get(name=branch_name)
+            appointment=Appointment.objects.create(name=name,email=email,phone=phone,date=date,time=time,age=age,gender=gender,address=address,message=message,branch=branch)
+            appointment.save()
+            messages.success(request,'Appointment Booked Successfully')
 
-       
+
+
+
 
     appointments = Appointment.objects.all()
+    branch = Branch.objects.all()
+    context['branch'] = branch
     context['appointments'] = appointments
     context['form'] = form
     return render(request, 'appointment.html', context)

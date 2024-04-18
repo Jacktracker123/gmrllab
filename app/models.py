@@ -7,17 +7,6 @@ from .constants import PaymentStatus
 
 
 # Create your models here.
-class Appointment(models.Model):
-    name=models.CharField(max_length=255)
-    email=models.CharField(max_length=255)
-    phone=models.CharField(max_length=255)
-    date=models.DateField(max_length=255)
-    time=models.TextField(max_length=255)
-    age=models.CharField(max_length=255)
-    gender=models.CharField(max_length=255)
-    address=models.TextField(max_length=255)
-    message=models.TextField(max_length=255)
-
 class Contact(models.Model):
     name=models.CharField(max_length=255)
     email=models.CharField(max_length=255)
@@ -48,6 +37,9 @@ class Branch_time(models.Model):
     closing_hours=models.CharField(max_length=300)
     opening_week=models.CharField(max_length=300)
     closing_week=models.CharField(max_length=300,null=True)
+
+    def __str__(self):
+        return self.name
     
 
 class Package(models.Model):
@@ -63,6 +55,9 @@ class Package(models.Model):
 class Subpackage(models.Model):
     name=models.ForeignKey(Package,on_delete=models.CASCADE)
     content=models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
 
 
 class Order(models.Model):
@@ -94,6 +89,21 @@ class Order(models.Model):
         return f"{self.id}-{self.name}-{self.status}"
 
 
+class Appointment(models.Model):
+    name=models.CharField(max_length=255)
+    email=models.CharField(max_length=255)
+    phone=models.CharField(max_length=255)
+    date=models.DateField(max_length=255)
+    time=models.TextField(max_length=255)
+    age=models.CharField(max_length=255)
+    gender=models.CharField(max_length=255)
+    address=models.TextField(max_length=255)
+    message=models.TextField(max_length=255)
+    branch=models.ForeignKey(Branch,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
 class Profile(models.Model):
     username=models.ForeignKey(User,on_delete=models.CASCADE)
     name=models.CharField(max_length=300)
@@ -104,11 +114,17 @@ class Profile(models.Model):
     number=models.CharField(max_length=300)
     date=models.DateField(max_length=255)
 
+    def __str__(self):
+        return self.name
+
 
 class Testimonial(models.Model):
     name=models.CharField(max_length=355)
     branch=models.ForeignKey(Branch,max_length=355,on_delete=models.CASCADE)
     review=models.TextField(max_length=500)
+        
+    def __str__(self):
+        return self.name
 
 
 
