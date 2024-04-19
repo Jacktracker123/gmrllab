@@ -58,6 +58,7 @@ def package(request):
     return render(request,'packages.html',context)
 
 
+@login_required(login_url='login')
 def packages_view(request,name):
     context={}
     
@@ -71,7 +72,6 @@ def packages_view(request,name):
     return render(request,'package_view.html',context)
 
 
-@login_required(login_url='login')
 def order_payment(request,name):
     if request.method == "POST":
         name = request.POST.get("name")
@@ -345,6 +345,9 @@ def register(request):
         uname=request.POST['uname']
         email=request.POST['email']
         password=request.POST['password']
+        if User.objects.filter(username=uname).exists():
+            messages.error(request, 'Username already exists. Please choose a different username.')
+            return render(request, 'registration/register.html')
         user=User.objects.create_user(first_name=fname,last_name=lname,username=uname,email=email,password=password)
         user.save()
         messages.success(request,'Registration Successfull')
@@ -354,9 +357,7 @@ def register(request):
         recipient_list = [user.email, ]
         send_mail( subject, message, email_from, recipient_list )
         return redirect('login')
-    else:
-        messages.error(request,'Username already exists!')
-        return render(request,'registration/register.html')
+    return render(request,'registration/register.html')
        
     
 def login(request):
