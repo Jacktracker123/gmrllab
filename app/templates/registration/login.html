@@ -39,7 +39,7 @@
           </div>
           <div class="row">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" name="password" id="pass" onclick="myFunction()" required>
+            <input type="password" placeholder="Password" name="password" required>
             {{ user.password.errors }}
             
           </div>
@@ -54,18 +54,6 @@
 
 
 
-
-
-<script>
-  function myFunction() {
-  var x = document.getElementById("pass");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
-</script>
 
 
 
