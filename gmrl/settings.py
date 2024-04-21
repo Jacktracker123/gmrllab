@@ -118,8 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS=['C:/Users/RAVEENA/Desktop/gmrllab/app/static/']
-STATIC_ROOT=os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS=['static']
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
