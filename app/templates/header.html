@@ -54,9 +54,9 @@
                         <span class="navbar-toggler-icon"></span>
                       </button>
                       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
+                        <div class="offcanvas-header text-white">
                           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">GMRL Laboratories</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                          <button type="button" class="btn-close btn-ligh" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
                           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -82,12 +82,15 @@
                               <li class="nav-item">
                                 <a class="nav-link nav-links" href="/contact-us/">Contact Us</a>
                               </li>
+                              <li class="nav-item appoint">
+                                <a class="nav-link nav-links" href="/contact-us/">Make an Appointment</a>
+                              </li>
 
                               <form action="" method="post">
                                 {% csrf_token %}
                                 <li class="nav-item action">
                                     <a class="nav-link profile" onclick="menuToggle(event);" href="#">
-                                        <i class="fa fa-user text-black"></i>
+                                        <i class="fa fa-user user-i"></i>
                                         {% if user.is_authenticated %}
                                        
                                             <div class="menu">
@@ -210,12 +213,15 @@
                               <li class="nav-item">
                                 <a class="nav-link nav-links" href="/contact-us/">Contact Us</a>
                               </li>
+                              <li class="nav-item appoint">
+                                <a class="nav-link nav-links" href="/contact-us/">Make an Appointment</a>
+                              </li>
                         
                               <form action="" method="post">
                                 {% csrf_token %}
                                 <li class="nav-item action">
                                     <a class="nav-link profile" onclick="menuToggle2(event);" href="#">
-                                        <i class="fa fa-user text-black"></i>
+                                        <i class="fa fa-user user-i"></i>
                                         {% if user.is_authenticated %}
                                        
                                             <div class="menu2">

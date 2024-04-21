@@ -119,7 +119,7 @@
               </div>
 
 
-<div class="col-lg-6 intro-img">
+<div class="col-lg-6 col-md-12 intro-img">
 
 <img src="{% static 'img/banner-02.jpg' %}" alt="">
 
@@ -171,19 +171,19 @@
 
   <!-- marquee section start -->
 
-<div class="container-lg marquee-section position-absolute bottom-0 start-50 translate-middle-x">
+<div class="container-md container-fluid-sm marquee-section">
 
   <div class="scroll">
 
       <div class="row">
 
-    <div class="col-lg-3 col-md-3 scroll-left">
-    <h3 class="scroll-h text-center mt-3"> <i class="fa fa-bullhorn"></i> News & Events</h3>
+    <div class="col-lg-3 col-md-12 scroll-left">
+    <h3 class="scroll-h text-center mt-3 mb-3"> <i class="fa fa-bullhorn"></i> News & Events</h3>
     </div>
 
 
 
-    <div class="col-lg-9 col-md-8 scroll-right">
+    <div class="col-lg-9 col-md-12 scroll-right">
     <marquee behavior="" direction="left" scrollamount="10">
        
         <p class="marq mt-3">Stay Updated with GMRL: Exciting News and Events Await! Explore the latest in health breakthroughs, special promotions, and community engagements right here. Check back often for updates that keep you informed and inspired.</p>
@@ -250,7 +250,9 @@
           <p class="mt-4 welcme-p">As we look ahead, our commitment to innovation and excellence remains unwavering. We understand that a proactive approach to healthcare is essential. Therefore, we are here to empower you with the knowledge and insights needed to make informed decisions about your well-being.</p>
           <p class="mt-5 welcome-caption">Choose GMRL Laboratories for Optimal Health</p>
           <p class="mt-4 welcme-p">Best laboratory in Ernakulam for a healthcare experience that goes beyond expectations – where cutting-edge technology meets compassionate care. Your journey to optimal health begins with us, and we’re excited to be a part of it. Trust <a href="">GMRL Laboratories</a>, where your health is our passion, and your well-being is our commitment.</p>
+          <div class="welcome-btn">
           <button type="button" class="btn btn-primary rounded-pill ps-4 pe-4 intro-btn mt-4">Learn More</button>
+        </div>
         </a>
   </div>
   
@@ -311,7 +313,7 @@
   </a>
       
   <a href="/appointment/">
-         <div class="flip pt-4 pb-4 ps-sm-5 pe-sm-5 home">
+         <div class="flip pt-4 pb-4 home b">
              <div class="flip-container">
              <img width="64" height="64" src="https://img.icons8.com/ios/64/666666/home--v1.png" alt="home--v1" class="first"/> <img width="64" height="64" src="https://img.icons8.com/ios/64/85ba32/home--v1.png" alt="home--v1" class="second"/>
              </div>
@@ -319,6 +321,16 @@
                    <h6>Home Visit</h6></div>
          </div>
   </a>
+
+  <a href="/branch/">
+    <div class="flip pt-4 pb-4 bran">
+        <div class="flip-container">
+        <img width="64" height="64" src="https://img.icons8.com/ios/64/666666/company--v1.png" alt="home--v1" class="first"/> <img width="64" height="64" src="https://img.icons8.com/ios/64/85ba32/company--v1.png" alt="home--v1" class="second"/>
+        </div>
+              <div class="flip-content">
+              <h6>Branches</h6></div>
+    </div>
+</a>
           
           </div>
     </div>  
@@ -421,9 +433,9 @@
         <span class="d-flex justify-content-center align-items-center">
         <i class="fa fa-phone emg-i phone"></i>
         </span>
-        <div class="emg-content d-flex flex-column justify-content-center align-items-md-center ms-4">
+        <div class="emg-content d-flex flex-column ms-4">
           <h3 class="em-h">Emergency Call: </h3>
-          <p class="fs-5 em-p text-white">Immediate Assistance Available - Dial Now!</p>
+          <p class="fs-5 em-p">Immediate Assistance Available - Dial Now!</p>
         </div>
         
         
@@ -432,7 +444,7 @@
         
         
         <div class="col-lg-5 d-flex justify-content-center align-items-center">
-          <h1>+91 81388 62626</h1>
+          <h1 class="emg-num">+91 81388 62626</h1>
         </div>
         
         
@@ -444,11 +456,11 @@
         
         <div class="col-lg-4 d-flex justify-content-center right-emg pt-4 pb-3 ">
           <span class="d-flex justify-content-center align-items-center">
-          <i class="fa fa-download emg-i"></i>
+          <i class="fa fa-download emg-down"></i>
           </span>
         <div class="emg-content ms-4">
-          <h6>Download</h6>
-          <h1>BROCHURE</h1>
+          <h6 class="down">Download</h6>
+          <h1 class="brochure">BROCHURE</h1>
         </div>
         </div>
         
@@ -490,7 +502,7 @@
   
   <!-- image slide start -->
   
-  <div class="container-lg swiper review-container mt-5 d-flex justify-content-center">
+  <div class="container-lg swiper review-container mt-5 d-flex justify-content-center pack-contain">
     <div class="slide-container-2">
       <div class="card-wrapper swiper-wrapper">
 
@@ -558,14 +570,22 @@
   
     <!-- testimonial slide start -->
           
-    <div class="container-lg swiper review-container">
+    <div class="container-lg swiper review-container test-review">
       <div class="slide-container-3">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper test-slide">
     {% for i in testimonial %}
-          <div class="swiper-slide">
-            <a href="/testimonials/" class="testimonials-item">
-              <div class="testimonial-content">
-                  <p>{{i.review}}</p>
+          <div class="swiper-slide test-swiper" style="width: 328px; height: auto;overflow-y: hidden;">
+            <a href="/testimonials/" class="testimonials-item" style="height: auto;">
+              <div class="testimonial-content test-content">
+                  <p style="padding: 0;
+                  margin: 0;
+                  font-style: italic;
+                  color: #666666;
+                  overflow: hidden;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 6;
+                  line-clamp: 6;
+                  -webkit-box-orient: vertical;">{{i.review}}</p>
               </div>
               <div class="testimonials-footer">
                   <span>
@@ -602,7 +622,7 @@
 
 <section class="enquiry">
 
-    <div class="container-lg en">
+    <div class="container-lg container-fluid-md en">
     
     <div class="row">
     
@@ -624,14 +644,17 @@
     <p><i class="fa fa-check"></i>  Competitive and accessible pricing to promote your health</p>
     <p><i class="fa fa-check"></i>  Convenient, patient-centric services for your well-being</p>
     </div>
+
+    <div class="en-btn">
     <a href="/contact-us/">
       <button type="button" class="btn btn-primary rounded-pill ps-4 pe-4 intro-btn mt-4">Learn More</button>
       </a>
+    </div>
 
     </div>
     
     
-    <div class="col-lg-4 col-md-12 col-sm-12 form-section">
+    <div class="col-lg-4 col-md-12 col-sm-8 form-section">
     
     <div class="form-heading">
       <h1 class="text-center pack-h">Enquiry</h1>
