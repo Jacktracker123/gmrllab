@@ -1854,6 +1854,12 @@ padding: 0;
   color: #22419c;
 }
 
+.right-profile1 li div{
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
 .right-profile1 li div,.right-profile-update1 li div input{
   font-size: 18px;
   font-weight: normal;
