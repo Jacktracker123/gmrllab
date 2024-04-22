@@ -438,8 +438,10 @@ def profile(request):
             # Handle the case where the profile doesn't exist
             profiles = None
 
+    package=Package.objects.all()
     profile=Profile.objects.all()
     context['profile'] = profile
+    context['package']=package
     context['form'] = form
 
     return render(request,'user_profile/profile.html',context)
@@ -482,6 +484,8 @@ def profile_update(request):
             profiles = None
 
     profile=Profile.objects.all()
+    package=Package.objects.all()
+    context['package']=package
     context['profile'] = profile
     context['form'] = form
 

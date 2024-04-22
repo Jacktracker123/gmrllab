@@ -43,12 +43,12 @@
 
 
 
-        <div class="container-fluid">
+        <div class="container-lg-fluid">
             <div class="header-wrap">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="../">
-                            <img src="{% static 'img/gmrl-logo.svg' %}" alt="Bootstrap" width="250" height="50">
+                        <a class="navbar-brand logo" href="../">
+                            <img src="{% static 'img/gmrl-logo.svg' %}" alt="Bootstrap" width="305" height="65">
                         </a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <span class="navbar-toggler-icon"></span>
@@ -82,9 +82,7 @@
                               <li class="nav-item">
                                 <a class="nav-link nav-links" href="/contact-us/">Contact Us</a>
                               </li>
-                              <li class="nav-item appoint">
-                                <a class="nav-link nav-links" href="/contact-us/">Make an Appointment</a>
-                              </li>
+                            
 
                               <form action="" method="post">
                                 {% csrf_token %}
@@ -176,11 +174,27 @@
 
 
     <section class="navigation-bar-2 hidden">
+
+      <div class="container-fluid headertop-div">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-6" hidden>
+                <ul class="socialmedia">
+                    <li><a href="https://www.facebook.com/" class="fb"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/" class="tw" ><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://in.linkedin.com/" class="li" ><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com/" class="in" ><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-lg-6 col-md-12 appoint"><a href="/appointment/" class="makeappointment">Make An Appointment</a></div>
+        </div>
+    </div>
+
+
         <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="../">
-                            <img src="{% static 'img/gmrl-logo.svg' %}" alt="Bootstrap" width="250" height="50">
+                        <a class="navbar-brand logo" href="../">
+                            <img src="{% static 'img/gmrl-logo.svg' %}" alt="Bootstrap" width="305" height="65">
                         </a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
                         <span class="navbar-toggler-icon"></span>
@@ -213,10 +227,7 @@
                               <li class="nav-item">
                                 <a class="nav-link nav-links" href="/contact-us/">Contact Us</a>
                               </li>
-                              <li class="nav-item appoint">
-                                <a class="nav-link nav-links" href="/contact-us/">Make an Appointment</a>
-                              </li>
-                        
+                                             
                               <form action="" method="post">
                                 {% csrf_token %}
                                 <li class="nav-item action">

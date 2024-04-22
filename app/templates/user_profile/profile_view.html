@@ -37,13 +37,13 @@
 <section class="profile-card">
 
     
-<div class="container">
+<div class="container-lg pro">
    
-    <div class="edit-options">
+    <div class="edit-options" hidden>
         <div class="profile-update">
             <a href="/profile_update/" class="btn px-3 btn-lg bg-success text-white profile-u"><i class="fa fa-edit fs-3"></i></a>
                </div>
-    <div class="profile-delete">
+    <div class="profile-delete" hidden>
         {% include 'user_profile/profile_delete.html' %}
         </div>
        
@@ -51,9 +51,9 @@
        
         
 
-<div class="row container d-flex justify-content-center profile">
+<div class="row profile">
 
-<div class="col-lg-4 left-profile">
+<div class="col-lg-4 col-md-12 left-profile col-12">
     <div class="mb-3">
         {% if profiles.gender == "Female" %}
         <img src="{% static 'img/women-profile.avif' %}" height="200" width="200" alt="User-Profile-Image">
@@ -68,7 +68,7 @@
 
 
 
-<div class="col-lg-8 right-profile">
+<div class="col-lg-8 col-md-12 right-profile col-12">
     <ul type="none">
 
 <li class="mt-4 mb-4"><span class="me-3 right-profile-con1">Username:</span> <span class="me-3 right-profile-con1">{{profiles.username}}</span></li>
@@ -83,6 +83,21 @@
 
 </div>
 
+
+<div class="col-lg-8 col-md-12 right-profile1 col-12">
+    <ul type="none">
+
+<li class="mt-5 mb-5"><span class="me-lg-3 right-profile-con1">Username:</span> <div class="me-lg-3 right-profile-con1">{{profiles.username}}</div></li>
+<li class="mt-5 mb-5"><span class="me-lg-3 right-profile-con1">Email:</span> <div class="me-lg-3 right-profile-con1">{{profiles.email}}</div></li>
+<li class="mt-5 mb-5"><span class="me-lg-3 right-profile-con1">Address:</span> <div class="me-lg-3 right-profile-con1">{{profiles.address}}</div></li>
+<li class="mt-5 mb-5"><span class="me-lg-3 right-profile-con1">Phone number:</span> <div class="me-lg-3 right-profile-con1">{{profiles.number}}</div></li>
+<li class="mt-5 mb-5"><span class="me-lg-3 right-profile-con1">DOB:</span> <div class="me-lg-3 right-profile-con1">{{profiles.date}}</div></li>
+<li class="mt-5 mb-5"><span class="me-lg-3 right-profile-con1">Age:</span> <div class="me-lg-3 right-profile-con1">{{profiles.age}}</div></li>
+<li class="mt-5 mb-5"><span class="me-lg-3 right-profile-con1">Gender:</span> <div class="me-lg-3 right-profile-con1">{{profiles.gender}}</div></li>
+
+    </ul>
+
+</div>
 
 
 

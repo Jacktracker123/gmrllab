@@ -51,6 +51,21 @@ a{
     text-decoration: none;
 }
 
+.appoint .makeappointment{
+  background: #85ba32;
+  float: right;
+  padding: 0px 20px;
+  transition-duration: 0.3s;
+  margin: 0px 28px 0px 0px;
+  color: #fff;
+  line-height: 40px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.appoint{
+  margin-top: 20px;
+}
 
 .appointment-form{
   margin-top: 100px;
@@ -156,10 +171,16 @@ a{
     color: black;
     font-size: 24px;
     border: none;
+    font-weight: bold;
 }
 
 .appoint{
   display: none;
+}
+
+.logo-img{
+  width: 305px;
+  height: 65px;
 }
 
   .action .profile {
@@ -1542,7 +1563,7 @@ textarea{
   
 
   .profile-card{
-    margin: 100px 50px 100px 50px;
+    margin: 100px 0px 100px 0px;
   }
   
   .profile-h{
@@ -1558,7 +1579,7 @@ textarea{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 50px 0px 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
   
@@ -1589,6 +1610,14 @@ textarea{
 
 .profile-address{
   font-size: 21px;
+}
+
+.right-profile1{
+  display: none;
+  background-color: wheat;
+    padding: 50px 20px 80px 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  
 }
 
   .left-department{
@@ -1753,6 +1782,28 @@ textarea{
   }
 
 @media only screen and (max-width: 769px){
+
+
+
+.right-profile{
+  display: none;
+}
+
+
+.right-profile1{
+  display: block;
+padding: 0;
+margin: 0;
+}
+
+.right-profile1 li span{
+  color: #22419c;
+}
+
+.right-profile1 li div{
+  font-size: 18px;
+  font-weight: normal;
+}
 
 .appoint{
   display: block;
@@ -1958,20 +2009,22 @@ color: white;
   padding-bottom: 0;
 }
 
-
+.profile-card{
+  margin-top: -50px;
+  margin-left: 0;
+  margin-right: 0;
+}
 
 }
 
 
   @media only screen and (max-width: 576px){
 
-.makeappointment1{
-  display: flex;
-  justify-content: flex-end;
-  align-items: end;
-  padding: 0;
+
+.header-fixed .makeappointment{
+ padding-left: 5px;
+ padding-right: 5px;
   transition-duration: 0.3s;
-  margin: 0;
   color: #fff;
   line-height: 40px;
   font-size: 14px;
@@ -2012,13 +2065,17 @@ color: white;
   }
 
   @media only screen and (max-width: 400px){
+
+.logo img{
+  width: 258px;
+  height: 55px;
+}
+
     .header-wrap{
       padding: 0;
       margin: 0;
     }
-    .header-fixed .makeappointment{
-     padding: 0;
-    }
+   
 
 
   }
