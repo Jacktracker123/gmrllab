@@ -809,6 +809,9 @@ padding-bottom: 20px;
     font-weight: bolder;
   }
   
+
+
+
   .form-btn:hover{
     background-color: #85ba32;
     color: white;
@@ -1588,10 +1591,19 @@ textarea{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
   
-  .right-profile{
+  .right-profile,.right-profile-update{
     background-color: wheat;
     padding: 50px 20px 80px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  
+  }
+
+  .right-profile-update1{
+    background-color: wheat;
+    padding: 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: none;
+    margin: 0;
   
   }
 
@@ -1609,9 +1621,32 @@ textarea{
     outline: none;
   }
 
+  .profile-btn{
+    width: 50%;
+    height: 44px;
+    background: #22419c;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  
+  .profile-btn:hover{
+    background-color: #85ba32;
+    color: white;
+  }
+
   .profile-submit{
     margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+
 
 .profile-address{
   font-size: 21px;
@@ -1620,7 +1655,6 @@ textarea{
 .right-profile1{
   display: none;
   background-color: wheat;
-    padding: 50px 20px 80px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   
 }
@@ -1801,13 +1835,32 @@ padding: 0;
 margin: 0;
 }
 
-.right-profile1 li span{
+.right-profile-update{
+  display: none;
+}
+
+.right-profile-update1{
+  display: block;
+  margin: 0;
+padding: 0;
+
+}
+.profile-submit{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.right-profile1 li span, .right-profile-update1 li span{
   color: #22419c;
 }
 
-.right-profile1 li div{
+.right-profile1 li div,.right-profile-update1 li div input{
   font-size: 18px;
   font-weight: normal;
+}
+
+.left-profile{
+  padding: 0;
 }
 
 .appoint{

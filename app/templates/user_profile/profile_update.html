@@ -35,14 +35,16 @@
 <section class="profile-card">
 
     
-<div class="container">
+<div class="container-lg pro">
    
   <div class="profile-back">
     <a href="/profile/" class="btn px-3 btn-lg profile-u fs-3 bg-warning text-black"><i class="fa fa-arrow-left fs-3"></i> Back</a>
        </div>
-<div class="row container d-flex justify-content-center profile">
 
-<div class="col-lg-4 left-profile">
+
+<div class="row">
+
+<div class="col-lg-4 col-md-12 left-profile col-12">
     <div class="mb-3">
         {% if profiles.gender == "Female" %}
         <img src="{% static 'img/women-profile.avif' %}" height="200" width="200" alt="User-Profile-Image">
@@ -57,7 +59,7 @@
 
 
 
-<div class="col-lg-8 right-profile">
+<div class="col-lg-8 col-md-12 col-12 right-profile-update">
     <ul type="none">
 
 <li class="mt-4 mb-4"><span class="me-3 right-profile-con1" hidden>Username:</span> <span class="me-3 right-profile-con1"><input type="text" value="{{profiles.username}}" class="profile-form" name="username" hidden></span>
@@ -82,6 +84,33 @@
 
 </div>
 
+
+
+
+<div class="col-lg-8 col-md-12 right-profile-update1 col-12">
+  <ul type="none">
+
+<li class="mt-5 mb-5"><span class="right-profile-con1" hidden>Username:</span> <div class="right-profile-con1"><input type="text" value="{{profiles.username}}" class="profile-form" name="username" hidden></div>
+<li class="mt-5 mb-5"><span class="right-profile-con1">Email:</span> <div class="right-profile-con1"><input type="text" value="{{profiles.email}}" class="profile-form" name="email"></div></li>
+<li class="mt-5 mb-5"><span class="right-profile-con1">Address:</span> <div class="right-profile-con1">
+<textarea id="message" name="address" class="profile-address" style="height: 30px;">{{profiles.address}}</textarea>
+</div></li>
+<li class="mt-5 mb-5"><span class="right-profile-con1">Phone number:</span> <div class="right-profile-con1"><input type="text" value="{{profiles.number}}" class="profile-form" name="number"></div></li>
+<li class="mt-5 mb-5"><span class="right-profile-con1">DOB:</span> <div class="right-profile-con1"><input type="date" value="{{ profiles.date|date:'Y-m-d' }}" class="profile-form" name="date"></div></li>
+<li class="mt-5 mb-5"><span class="right-profile-con1">Age:</span> <div class="right-profile-con1"><input type="text" value="{{profiles.age}}" class="profile-form" name="age"></div></li>
+<li class="mt-5 mb-5"><span class="right-profile-con1">Gender:</span> <div class="right-profile-con1"><input type="text" value="{{profiles.gender}}" class="profile-form" name="gender"></div></li>
+
+<li class="profile-submit">
+<div class="col-lg-4 col-md-12 col-12">
+  <button type="submit" class="profile-btn mt-3 mb-3 rounded" name="update" value="{{profiles.id}}">Update Profile</button>
+</div>
+</li>
+
+  </ul>
+
+  
+
+</div>
 
 
 
