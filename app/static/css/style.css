@@ -1581,19 +1581,45 @@ textarea{
     padding: 0px 50px 0px 50px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
+
+  .left-profile-update{
+    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: linear-gradient(to right, #ee5a6f, #f29263);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 50px 0px 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
   
   .right-profile,.right-profile-update{
     background-color: wheat;
-    padding: 50px 20px 80px 20px;
+    padding: 50px 20px 50px 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   
   }
+
+.right-profile-update{
+  padding: 0px 20px 0px 20px;
+  display: none;
+
+}
+
+.right-profile-update1 li span{
+  color: #22419c;
+}
+
+.right-profile-update li span small{
+  font-size: 15px;
+  font-weight: normal;
+}
 
   .right-profile-update1{
     background-color: wheat;
     padding: 0px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    display: none;
+  
     margin: 0;
   
   }
@@ -1851,10 +1877,16 @@ padding: 0;
   word-wrap: break-word;
 }
 
-.right-profile1 li div,.right-profile-update1 li div input{
+.right-profile1 li div,.right-profile-update1 li span input,.right-profile-update1 li span textarea{
   font-size: 18px;
   font-weight: normal;
 }
+
+.right-profile-update1 li span small{
+  font-size: 15px;
+  font-weight: normal;
+}
+
 
 .left-profile{
   padding: 0;

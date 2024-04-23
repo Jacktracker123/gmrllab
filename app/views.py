@@ -424,7 +424,6 @@ def profile(request):
             profile=Profile.objects.get(id=key)
             profile.delete()
             return redirect('profile')
-       
             
 # Retrieve the current logged-in user object
     user = request.user
@@ -450,27 +449,29 @@ def profile_update(request):
     context={}
     form=Profile_form()
 
-    if'update' in request.POST:
+    if 'update' in request.POST:
         key = request.POST.get('update')
         profile = Profile.objects.get(id=key)
-        name=request.POST['name']
-        email=request.POST['email']
-        age=request.POST['age']
-        date=request.POST['date']
-        address=request.POST['address']
-        gender=request.POST['gender']
-        user_name=request.POST['username']
+        name = request.POST['name']
+        email = request.POST['email']
+        age = request.POST['age']
+        date = request.POST['date']
+        address = request.POST['address']
+        gender = request.POST['gender']
+        number = request.POST['number']
+        user_name = request.POST['username']
         profile_user = User.objects.get(username=user_name)
-        profile.name=name
-        profile.age=age
-        profile.email=email
-        profile.date=date
-        profile.address=address
-        profile.gender=gender
-        profile.username=profile_user
+        profile.name = name
+        profile.age = age
+        profile.email = email
+        profile.date = date
+        profile.address = address
+        profile.gender = gender
+        profile.username = profile_user
+        profile.number = number
         profile.save()
         return redirect('profile')
-
+    
 
     user = request.user
         
