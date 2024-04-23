@@ -98,7 +98,7 @@ class Appointment(models.Model):
     age=models.CharField(max_length=255)
     gender=models.CharField(max_length=255)
     address=models.TextField(max_length=255)
-    message=models.TextField(max_length=255)
+    message=models.TextField(max_length=255,null=True)
     branch=models.ForeignKey(Branch,on_delete=models.CASCADE)
 
     def __str__(self):

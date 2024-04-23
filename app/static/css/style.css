@@ -62,6 +62,10 @@ a{
   font-size: 14px;
   text-decoration: none;
 }
+.appoint .makeappointment:hover{
+  background-color: #22419c;
+  color: white;
+}
 
 .appoint{
   margin-top: 20px;
@@ -118,19 +122,6 @@ a{
 }
 .profile i{
   color: black;
-}
-
-.makeappointment1{
-  display: none;
-  background: #85ba32;
-  float: right;
-  padding: 0px 20px;
-  transition-duration: 0.3s;
-  margin: 0px 28px 0px 0px;
-  color: #fff;
-  line-height: 40px;
-  font-size: 14px;
-  text-decoration: none;
 }
 
 
