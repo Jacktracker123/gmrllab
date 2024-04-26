@@ -616,6 +616,11 @@ padding-bottom: 20px;
     color: black;
 }
 
+.review-btn:hover{
+  background: linear-gradient(to top, #09203f 0%, #537895 100%); 
+  color: white;
+}
+
 .app-form input{
     border: 1px solid #c8cfe6;
     
@@ -918,7 +923,10 @@ footer{
 
 /* Package Section */
 
-
+.package{
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
 .pack-heading{
     display: flex;
     justify-content: space-between;
@@ -1089,6 +1097,9 @@ object-fit: cover; /* Maintain the aspect ratio and cover the entire container *
   opacity: 1;
 }
 
+.card-1{
+  border: none;
+}
 
 
 .card-name{
@@ -1108,6 +1119,15 @@ object-fit: cover; /* Maintain the aspect ratio and cover the entire container *
   overflow: hidden;
   }  
 
+  .en-span{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    color: #22419c;
+    font-weight: bolder;
+}
+
 
   .card-body {
   background-color: rgb(193, 191, 191);
@@ -1119,47 +1139,6 @@ object-fit: cover; /* Maintain the aspect ratio and cover the entire container *
     height: 90px; /* Set a fixed height for all product cards */
   }
 
-.package{
-  margin: 150px 0px 100px 0px;
-}
-
-.card-body i{
-  font-weight: bolder;
-  display: flex;
-  align-items: center;
-}
-.card-body p{
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.en-img{
-  position: relative;
-}
-.en-span{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: white;
-  color: #22419c;
-  font-weight: bolder;
-}
-
-
-.package-containers{
-  padding: 40px 0;
-}
-
-.package-price{
-background-color: #22419c;
-text-align: center;
-color: #fff;
-border-radius: 3px;
-font-size: 16px;
-padding: 12px 0px;
-}
 
 /* Whatsapp icon styling */
 
@@ -1752,6 +1731,27 @@ textarea{
 
   @media only screen and (max-width: 992px){
 
+    
+.introduction-section{
+  margin-bottom: 180px;
+}
+
+.welcome-section{
+  margin-top: 100px;
+}
+
+.welcme-caption{
+  margin-top: 180px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.heading-caption{
+  margin-bottom: 0px;
+  padding-bottom: 0;
+  margin-top: 300px;
+}
+
 
   .en{
     padding-left: 30px;
@@ -1787,7 +1787,7 @@ textarea{
     padding-left: 0px;
     padding-right: 0px;
     text-align: center;
-    margin: 0px;
+
   }
   
   
@@ -1835,10 +1835,26 @@ textarea{
     padding-right: 10px;
   }  
    
+  .scroll-right{
+    padding: 0;
+    margin: 0;
+    background-color: #85ba32;
+  }
+  .foot-half{
+    display: none;
+}
+
   }
 
 @media only screen and (max-width: 769px){
 
+.review-form{
+  margin-top: -80px;
+}
+
+  .reviews{
+   padding: 20px;
+  }
 
 
 .right-profile{
@@ -2008,9 +2024,7 @@ color: white;
 }
 
   
-  .foot-half{
-    display: none;
-}
+
     .flip-container img{
         left: 40%;
           }
@@ -2075,25 +2089,6 @@ color: white;
   padding: 0;
   margin: 0;
   background-color: #85ba32;
-}
-
-.introduction-section{
-  margin-bottom: 180px;
-}
-
-.welcome-section{
-  margin-top: 100px;
-}
-
-.welcme-caption{
-  margin-top: 180px;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.heading-caption{
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 
 .profile-card{

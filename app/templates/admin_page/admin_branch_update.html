@@ -1,76 +1,75 @@
-<a href="" data-bs-toggle="modal" data-bs-target="#updateBranchModal_{{i.id}}" class="btn px-3 btn-lg bg-success text-white"><b>Update</b></a>
-<a href="" data-bs-toggle="modal" data-bs-target="#deleteBranchModal_{{i.id}}" class="btn px-3 btn-lg bg-danger text-white"><b>Delete</b></a>
+<a href="" data-bs-toggle="modal" data-bs-target="#updateBranchModal_{{i.id}}" class="btn px-3 btn-lg bg-success text-white fs-6"><b>Update</b></a>
+<a href="" data-bs-toggle="modal" data-bs-target="#deleteBranchModal_{{i.id}}" class="btn px-3 btn-lg bg-danger text-white fs-6"><b>Delete</b></a>
 
-                        
-                    <!-- update student modal -->
-                    <div class="modal fade" id="updateBranchModal_{{i.id}}" tabindex="-1" aria-labelledby="updateBranchModal_{{i.id}}Label" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <form action="" method="post">
-                                {% csrf_token %}
-                                <div class="modal-content">
-                                    <div class="modal-header bg-info">
-                                    <h1 class="modal-title fs-5" id="updateBranchModal_{{i.id}}Label">Update Branches</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Branch name</label>
-                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Branch name" name="name" value="{{i.name}}">
-                                          </div>
-                                          <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Branch image</label>
-                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Branch image" name="image" value="{{i.image}}">
-                                          </div>
-                                          <div class="mb-3">
-                                            <label for="address" class="form-label">Branch Address</label>
-                                            <div class="form-floating">
-                                                <textarea class="form-control" id="address" style="height: 100px" name="address" required>
-                                                    {{i.address}}</textarea>
-                                              </div>
-                                          </div>
-                                          <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Branch Number</label>
-                                            <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="Branch number" name="number" value="{{i.number}}" pattern="\+[0-9]{2} [0-9]{4} [0-9]{6}">
-                                          </div>
-                                          <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Branch Email</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Branch email" name="email" value="{{i.email}}" required pattern="[a-z].*[a-z0-9]@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
-                                          </div>
-                                          <div class="mb-3 form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="status" {% if i.status %}checked{% endif %}>
-                                            <label class="form-check-label" for="exampleCheck1">Branch status</label>
-                                          </div>
-                                    </div>
-                                          <div class="modal-footer bg-info">
-                                            <button type="button" class="btn bg-danger text-white" data-bs-dismiss="modal">Cancel</button>
-                                            <button type="submit" class="btn btn-success" name="update" value="{{i.id}}">Update branch</button>
-                                        </div>
-                                        
-                                </div>
-                            </form>
+    
+<!-- update student modal -->
+<div class="modal fade" id="updateBranchModal_{{i.id}}" tabindex="-1" aria-labelledby="updateBranchModal_{{i.id}}Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                <h1 class="modal-title fs-5" id="updateBranchModal_{{i.id}}Label">Update Branches</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Branch name</label>
+                        <input type="text" class="form-control text-white" id="exampleFormControlInput1" placeholder="Enter Branch name" name="name" value="{{i.name}}">
                         </div>
-                    </div>
-
-
-
-
-                    <!-- delete student modal -->
-                    <div class="modal fade" id="deleteBranchModal_{{i.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteBranchModal_{{i.id}}Label" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <form action="" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="id" value="{{i.id}}">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <p>Are you sure? you want to delete {{i.name}} branch</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-danger" name="delete" value="{{i.id}}">Delete branch</button>
-                                    </div>
-                                </div>
-                            </form>
+                        <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Branch image</label>
+                        <input type="text" class="form-control text-white" id="exampleFormControlInput1" placeholder="Branch image" name="image" value="{{i.image}}">
                         </div>
+                        <div class="mb-3">
+                        <label for="address" class="form-label">Branch Address</label>
+                        <div class="form-floating">
+                            <textarea class="form-control text-white" id="address" style="height: 100px" name="address" required>
+                                {{i.address}}</textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Branch Number</label>
+                        <input type="number" class="form-control text-white" id="exampleFormControlInput1" placeholder="Branch number" name="number" pattern="\+[0-9]{2} [0-9]{4} [0-9]{6}" title="Please enter your phone number in the format: +xx xxxx xxxxxx" value="{{i.number}}">
+                        </div>
+                        <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Branch Email</label>
+                        <input type="email" class="form-control text-white" id="exampleFormControlInput1" placeholder="Branch email" name="email" pattern="[a-z].*[a-z0-9]@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address" value="{{i.email}}" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input text-white" id="exampleCheck1" name="status" {% if i.status %}checked{% endif %}>
+                        <label class="form-check-label" for="exampleCheck1">Branch status</label>
+                        </div>
+                </div>
+                        <div class="modal-footer bg-info">
+                        <button type="button" class="btn bg-danger text-white" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-success" name="update" value="{{i.id}}">Update branch</button>
                     </div>
-
                     
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<!-- delete student modal -->
+<div class="modal fade" id="deleteBranchModal_{{i.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteBranchModal_{{i.id}}Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{i.id}}">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Are you sure? you want to delete {{i.name}} branch</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger" name="delete" value="{{i.id}}">Delete branch</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

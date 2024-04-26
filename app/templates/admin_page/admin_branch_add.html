@@ -1,7 +1,7 @@
 <form action="" method="POST">
     {% csrf_token %}
 
-<a href="" data-bs-toggle="modal" data-bs-target="#addNewBranchModal" class="btn px-3 btn-lg" style="color: yellow;background-color: red;"><b>Add new branches</b></a>
+<a href="" data-bs-toggle="modal" data-bs-target="#addNewBranchModal" class="btn px-3 btn-lg fs-5" style="color: yellow;background-color: red;"><b>Add new branches</b></a>
   
   <!-- Modal -->
   <div class="modal fade" id="addNewBranchModal" tabindex="-1" aria-labelledby="addNewBranchModalLabel" aria-hidden="true">
@@ -15,25 +15,25 @@
         <div class="modal-body">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Branch name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Branch name" name="name" required>
+                <input type="text" class="form-control text-white" id="exampleFormControlInput1" placeholder="Enter Branch name" name="name" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Branch image</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Branch image" name="image" required>
+                <input type="text" class="form-control text-white" id="exampleFormControlInput1" placeholder="Branch image" name="image" required>
               </div>
               <div class="mb-3">
                 <label for="address" class="form-label">Branch Address</label>
                 <div class="form-floating">
-                    <textarea class="form-control" id="address" style="height: 100px" name="address" required></textarea>
+                    <textarea class="form-control text-white" id="address" style="height: 100px" name="address" required></textarea>
                   </div>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Branch Number</label>
-                <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="Branch number" name="number" pattern="\+[0-9]{2} [0-9]{4} [0-9]{6}" required>
+                <input type="text" class="form-control text-white" id="exampleFormControlInput1" placeholder="Branch number" name="number" pattern="\+[0-9]{2} [0-9]{4} [0-9]{6}" title="Please enter your phone number in the format: +xx xxxx xxxxxx" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Branch Email</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Branch email" name="email" pattern="[a-z].*[a-z0-9]@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                <input type="email" class="form-control text-white" id="exampleFormControlInput1" pattern="[a-z].*[a-z0-9]@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address" placeholder="Branch email" name="email" required>
               </div>
               <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" name="status">

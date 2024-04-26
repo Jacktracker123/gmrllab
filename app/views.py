@@ -532,11 +532,11 @@ def admin_branches(request):
 
 def admin_branch_view(request,name):
     context = {}
-    form = Branch_form()
     timing_form=Branch_timing_form()
 
     if request.method == "POST":
-        branch_name = Branch.objects.get(name=name)
+        bran=request.POST.get('name')
+        branch_name = Branch.objects.get(name=bran)
         opening_hours=request.POST.get('opening_hours')
         closing_hours=request.POST.get('closing_hours')
         opening_week=request.POST.get('opening_week')
@@ -544,11 +544,7 @@ def admin_branch_view(request,name):
         timing = Branch_time.objects.create(name=branch_name, opening_hours=opening_hours,closing_hours=closing_hours,opening_week=opening_week,closing_week=closing_week)
         timing.save()
    
-        
-                
-
-    
-           
+     
 
     branch = Branch.objects.all()
     package=Package.objects.all()
@@ -556,7 +552,6 @@ def admin_branch_view(request,name):
     context['timing']=timing
     context['package']=package
     context['branch'] = branch
-    context['form'] = form
     context['timing_form'] = timing_form
     context['data'] = Branch.objects.get(name=name)
 

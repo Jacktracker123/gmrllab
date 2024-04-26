@@ -38,8 +38,7 @@ class Branch_time(models.Model):
     opening_week=models.CharField(max_length=300)
     closing_week=models.CharField(max_length=300,null=True)
 
-    def __str__(self):
-        return self.name
+
     
 
 class Package(models.Model):

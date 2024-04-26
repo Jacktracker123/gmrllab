@@ -38,7 +38,7 @@
 
 <div class="heading-caption">
 
-  <h1 class="intro-heading">
+  <h1 class="intro-heading pt-5">
       Your Journey to <br>
       Wellness: Precision Diagnostics, <br>
       Compassionate Care.
@@ -170,19 +170,19 @@
 
   <!-- marquee section start -->
 
-<div class="container-md container-fluid-sm marquee-section">
+<div class="container-xl container-fluid-lg marquee-section">
 
   <div class="scroll">
 
       <div class="row">
 
-    <div class="col-lg-3 col-md-12 scroll-left">
+    <div class="col-xxl-3 col-lg-12 col-md-12 scroll-left">
     <h3 class="scroll-h text-center mt-3 mb-3"> <i class="fa fa-bullhorn"></i> News & Events</h3>
     </div>
 
 
 
-    <div class="col-lg-9 col-md-12 scroll-right">
+    <div class="col-xxl-9 col-lg-12 col-md-12 scroll-right">
     <marquee behavior="" direction="left" scrollamount="10">
        
         <p class="marq mt-3">Stay Updated with GMRL: Exciting News and Events Await! Explore the latest in health breakthroughs, special promotions, and community engagements right here. Check back often for updates that keep you informed and inspired.</p>
@@ -671,10 +671,8 @@
         {% endfor %}
         {% endif %}
       <input class="form-control form-enquiry mt-3 text-black" type="text" placeholder="Your Name" aria-label="default input example" name="name" required>
-      <input class="form-control form-enquiry mt-3 text-black" type="email" placeholder="Email" aria-label="default input example" name="email" pattern="[a-z].*[a-z0-9]@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
-      <small class="text-danger">Please enter a valid email address</small>
-      <input class="form-control form-enquiry mt-3 text-black" type="tel" placeholder="Phone" aria-label="default input example" name="phone" pattern="\+[0-9]{2} [0-9]{4} [0-9]{6}" required>
-      <small class="text-danger">Please enter your phone number in the format: +xx xxxx xxxxxx</small>
+      <input class="form-control form-enquiry mt-3 text-black" type="email" placeholder="Email" aria-label="default input example" name="email" pattern="[a-z].*[a-z0-9]@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address" required>
+      <input class="form-control form-enquiry mt-3 text-black" type="tel" placeholder="Phone" aria-label="default input example" name="phone" pattern="\+[0-9]{2} [0-9]{4} [0-9]{6}" title="Please enter your phone number in the format: +xx xxxx xxxxxx" required>
       <textarea class="form-control form-enquiry mt-3 text-black" id="exampleFormControlTextarea1" cols="40" rows="10" placeholder="Message" name="message" required></textarea>
       <div class=" d-flex justify-content-center">
         <button id="submitButton" class="form-btn mt-3 mb-3 rounded" name="save">
