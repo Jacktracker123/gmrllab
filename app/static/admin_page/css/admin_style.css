@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Caprasimo&family=Dancing+Script:wght@600;700&family=EB+Garamond:wght@600&family=Lemon&family=Lobster&family=Mukta:wght@300&family=Oswald:wght@300&family=Raleway:wght@100&family=Salsa&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Caprasimo&family=Dancing+Script:wght@600;700&family=EB+Garamond:wght@600&family=Lemon&family=Mukta:wght@300&family=Oswald:wght@300&family=Raleway:wght@100&family=Salsa&family=Shadows+Into+Light&display=swap');
 a{
     text-decoration: none;
 }
@@ -146,7 +147,157 @@ a{
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
+
+  .table thead tr th{
+    position: sticky;
+    top: 0;
+    background: #22419c;
+  color: white;
+  }
+ 
+.hoverable tr{
+  color: black;
+  border: 1px solid white;
+  background-color: lightgreen;
+
+}
+
+.hoverable tbody{
+  border: 1px solid white;
+
+}
+
+.table, .table th, .table td{
+  border: 1px solid white;
+
+}
+
+
+
+.hoverable tr:hover{
+  background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);;
+  color: black;
+}
+.pagination-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.pagination .page-item {
+  display: inline;
+}
+
+.pagination .page-link {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #007bff;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.pagination .page-link:hover {
+  z-index: 2;
+  color: #0056b3;
+  background-color: #e9ecef;
+  border-color: #ddd;
+}
+
+.pagination .page-link:focus {
+  z-index: 2;
+  outline: none;
+}
+
+.pagination .page-link:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.pagination .page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.pagination .page-item:last-child .page-link {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.pagination .page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  cursor: default;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.scrollable-table {
+  height: auto;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+/* Works on Firefox */
+.scrollable-table{
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) white;
+}
+
+.table-section{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.table-section h4{
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+/* Gallery Page */
+
+
+.gallery{
+  z-index: -1;
+ }
+ 
+ .gallery img{
+   width: 300px;
+   height: 300px;
+   margin: 10px;
+ }
+ 
+
+
+/* Works on Chrome, Edge, and Safari */
+/* *::-webkit-scrollbar {
+  width: 12px;
+} */
+
+
+.hoverable{
+  border: 1px solid white;
+}
+
+
+
   
   .navbar{
     background-color: #85ba32;
@@ -170,6 +321,5 @@ a{
     .nav-link i, .navbar-profile-name{
       color: black;
     }
-
 
   }

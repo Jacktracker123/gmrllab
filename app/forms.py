@@ -50,3 +50,9 @@ class Testimonial_form(forms.ModelForm):
     class Meta:
         model=Testimonial
         fields='__all__'
+
+
+class Gallery_form(forms.ModelForm):
+    class Meta:
+        model=Gallery
+        fields='__all__'

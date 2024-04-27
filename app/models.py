@@ -100,8 +100,7 @@ class Appointment(models.Model):
     message=models.TextField(max_length=255,null=True)
     branch=models.ForeignKey(Branch,on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.name
+   
 
 class Profile(models.Model):
     username=models.ForeignKey(User,on_delete=models.CASCADE)
@@ -126,7 +125,8 @@ class Testimonial(models.Model):
         return self.name
 
 
-
+class Gallery(models.Model):
+    image=models.ImageField(upload_to="gallery/")
 
 
 

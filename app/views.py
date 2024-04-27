@@ -16,6 +16,8 @@ from django.contrib.auth.views import PasswordResetView
 from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
+from datetime import datetime
+
 
 # Create your views here.
 def index(request):
@@ -219,7 +221,9 @@ def gallery(request):
 
 
     package=Package.objects.all()
+    gallery=Gallery.objects.all()
     context['package']=package
+    context['gallery']=gallery
     return render(request,'gallery.html',context)
 
 
@@ -495,7 +499,30 @@ def profile_update(request):
 
 
 def admin_page(request):
-    return render(request,'admin_page/admin_page.html')
+
+    context={}
+
+    package=Package.objects.all()
+    context['package']=package
+    pack_count=len(package)
+    context['pack_count']=pack_count
+
+    order=Order.objects.all()
+    context['order']=order
+    total_order=len(order)
+    context['total_order']=total_order
+    total_amount=0
+
+    for i in order:
+        total_amount+=i.amount
+
+    context['total_amount']=total_amount
+
+    branch=Branch.objects.all()
+    branch_count=len(branch)
+    context['branch_count']=branch_count
+
+    return render(request,'admin_page/admin_page.html',context)
 
 
 def admin_branches(request):
@@ -655,10 +682,81 @@ def admin_package_update(request):
     return render(request,'admin_page/admin_package_update.html')
 
 def admin_appointments_view(request):
+    context = {}
+
+    appointments = Appointment.objects.all()
+    branches = Branch.objects.all()
+
+    # Check if the filter button is pressed
+    if 'branch' in request.GET:
+        # Get the selected branch name from the request
+        branch_name = request.GET.get('branch')
+
+        # If a branch name is selected, filter appointments based on it
+        if branch_name:
+            appointments = appointments.filter(branch__name=branch_name)
+
+        context['selected_branch'] = branch_name
+
+    # Check if the filter button for date is pressed
+    if 'date' in request.GET:
+        # Get the selected date from the request
+        selected_date_str = request.GET.get('date')
+
+        # If a date is selected, convert it to datetime format
+        if selected_date_str:
+            selected_date = datetime.strptime(selected_date_str, '%B %d, %Y')
+
+            # Filter appointments based on the selected date
+            appointments = appointments.filter(date=selected_date)
+
+        context['selected_date'] = selected_date_str
+
+    context['branches'] = branches
+    context['appointments'] = appointments
+
+    return render(request, 'admin_page/admin_appointments_view.html', context)
+
+  
+
+
+def admin_contacts_view(request):
     context={}
-    appointments=Appointment.objects.all()
-    context['appointments']=appointments
-    return render(request,'admin_page/admin_appointments.html',context)
+    contact=Contact.objects.all()
+    context['contact']=contact
+    return render(request,'admin_page/admin_contacts_view.html',context)
+
+def admin_enquiries_view(request):
+    context={}
+    enquiry=Enquiry.objects.all()
+    context['enquiry']=enquiry
+    return render(request,'admin_page/admin_enquiries_view.html',context)
+
+def admin_orders_view(request):
+    context = {}
+
+    orders = Order.objects.all()
+    packages = Package.objects.all()
+    branches = Branch.objects.all()
+
+    if 'branch_name' in request.GET:
+        branch_name = request.GET.get('branch_name')
+        if branch_name:
+            orders = orders.filter(branch_name__name=branch_name)
+        context['selected_branch'] = branch_name
+
+    if 'package_name' in request.GET:
+        package_name = request.GET.get('package_name')
+        if package_name:
+            orders = orders.filter(package_name__name=package_name)
+        context['selected_package'] = package_name
+
+    context['packages'] = packages
+    context['branches'] = branches
+    context['orders'] = orders
+
+    return render(request, 'admin_page/admin_orders_view.html', context)
+
 
 
 @login_required(login_url='login')
@@ -690,3 +788,21 @@ def order(request):
     
     # Render the template with the context
     return render(request, 'orders.html', context)
+
+def admin_gallery_view(request):
+    context={}
+    form=Gallery_form()
+
+    if request.method=="POST":
+        form=Gallery_form(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+
+
+
+
+    gallery=Gallery.objects.all()
+    context['gallery']=gallery
+    context['form']=form
+
+    return render(request,'admin_page/admin_gallery_view.html',context)

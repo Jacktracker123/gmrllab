@@ -41,3 +41,7 @@ admin.site.register(Profile,Profile_Display)
 class Testimonial_Display(admin.ModelAdmin):
     list_display=['name','branch','review']
 admin.site.register(Testimonial,Testimonial_Display)
+
+class Gallery_Display(admin.ModelAdmin):
+    list_display=['image']
+admin.site.register(Gallery,Gallery_Display)

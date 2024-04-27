@@ -47,6 +47,13 @@ urlpatterns = [
          name='password_reset_complete'),
  path('profile_update/',views.profile_update,name="profile_update"),
 path('orders/',views.order,name="orders"),
+path('admin_contacts_view/',views.admin_contacts_view,name="admin_contacts_view"),
+path('admin_enquiries_view/',views.admin_enquiries_view,name="admin_enquiries_view"),
+path('admin_orders_view/',views.admin_orders_view,name="admin_orders_view"),
+path('admin_gallery_view/',views.admin_gallery_view,name="admin_gallery_view"),
+
+
+
 
     
     
