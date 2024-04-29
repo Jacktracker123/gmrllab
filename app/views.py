@@ -26,10 +26,17 @@ def index(request):
 
     if request.method=="POST":
         if'save' in request.POST:
-            form=Enquiry_form(request.POST)
-            form.save()
-            messages.success(request,'Enquiry form submitted')
-            
+            name=request.POST.get('name')
+            email=request.POST.get('email')
+            phone=request.POST.get('phone')
+            message=request.POST.get('message')
+            branch=request.POST.get('branch')
+            branch_name=Branch.objects.get(name=branch)
+            enquiries=Enquiry.objects.create(name=name,email=email,phone=phone,message=message,branch=branch_name)
+            enquiries.save()
+            messages.success(request,'Enquiries submitted successfully')
+
+
     enquiry=Enquiry.objects.all()
     package=Package.objects.all()
     branch=Branch.objects.all()
@@ -259,13 +266,24 @@ def contact(request):
 
     if request.method=="POST":
         if'save' in request.POST:
-            form=Contact_form(request.POST)
-            form.save()
-            messages.success(request,'Message send successfully')
+            name=request.POST.get('name')
+            email=request.POST.get('email')
+            phone=request.POST.get('phone')
+            subject=request.POST.get('subject')
+            message=request.POST.get('message')
+            branch=request.POST.get('branch')
+            branch_name=Branch.objects.get(name=branch)
+            contacts=Contact.objects.create(name=name,email=email,phone=phone,subject=subject,message=message,branch=branch_name)
+            contacts.save()
+            messages.success(request,"Message send successfully")
+
+          
     
    
 
     package=Package.objects.all()
+    branch=Branch.objects.all()
+    context['branch']=branch
     context['package']=package
     contact=Contact.objects.all()
     context['contact']=contact
@@ -504,7 +522,14 @@ def admin_page(request):
 
     package=Package.objects.all()
     context['package']=package
-    pack_count=len(package)
+
+
+    pack_count=0
+    for i in package:
+        if i.branch.status:
+            pack_count += 1
+
+
     context['pack_count']=pack_count
 
     order=Order.objects.all()
@@ -513,15 +538,52 @@ def admin_page(request):
     context['total_order']=total_order
     total_amount=0
 
+
     for i in order:
         total_amount+=i.amount
 
     context['total_amount']=total_amount
 
     branch=Branch.objects.all()
-    branch_count=len(branch)
+
+    branch_count=0
+    for i in branch:
+        if i.status:
+            branch_count += 1
+  
     context['branch_count']=branch_count
 
+    branches = Branch.objects.filter(status=True)
+    packages = Package.objects.all()
+    
+    branch_package_count = {}
+
+    # Loop through branches and initialize package count for each branch
+    for branch in branches:
+        branch_package_count[branch.name] = 0
+
+    # Loop through packages and increment package count for each branch
+    for package in packages:
+        branch_name = package.branch.name
+        # Check if the branch's status is False, if so, continue to the next package
+        if not package.branch.status:
+            continue
+        branch_package_count[branch_name] += 1
+
+    # Create a list of dictionaries containing branch name and package count
+    branches_with_counts = [{'name': branch.name, 'count': branch_package_count[branch.name]} for branch in branches]
+
+    context['branches_with_counts'] = branches_with_counts
+
+    appointment = Appointment.objects.all()
+    context['appointment']=appointment
+
+    contact = Contact.objects.all()
+    context['contact']=contact
+
+    enquiry = Enquiry.objects.all()
+    context['enquiry']=enquiry
+    
     return render(request,'admin_page/admin_page.html',context)
 
 
@@ -717,20 +779,80 @@ def admin_appointments_view(request):
 
     return render(request, 'admin_page/admin_appointments_view.html', context)
 
-  
+def admin_appointment_detail(request):
+    context={}
+
+    if request.method == "POST":
+        appointment_id=request.POST.get('id')
+
+        context['data']=Appointment.objects.get(id=appointment_id)
+
+    return render(request,'admin_page/admin_appointment_detail.html',context)
 
 
 def admin_contacts_view(request):
     context={}
+
+    branches=Branch.objects.all()
     contact=Contact.objects.all()
-    context['contact']=contact
+
+    if 'branch' in request.GET:
+
+        branch_name = request.GET.get('branch')
+        if branch_name:
+            contact = Contact.objects.filter(branch__name=branch_name)
+        context['selected_branch'] = branch_name
+
+    context['contact'] = contact  # Assuming you want to pass the filtered enquiries to the context
+    context['branches'] = branches
+
+
     return render(request,'admin_page/admin_contacts_view.html',context)
+
+def admin_contact_detail(request):
+    context={}
+
+    if request.method == "POST":
+        contact_id=request.POST.get('id')
+
+        context['data']=Contact.objects.get(id=contact_id)
+
+    return render(request,'admin_page/admin_contact_detail.html',context)
+
 
 def admin_enquiries_view(request):
     context={}
+
+    branches=Branch.objects.all()
     enquiry=Enquiry.objects.all()
-    context['enquiry']=enquiry
+
+    if 'branch' in request.GET:
+
+        branch_name = request.GET.get('branch')
+        if branch_name:
+            enquiry = Enquiry.objects.filter(branch__name=branch_name)
+        context['selected_branch'] = branch_name
+
+    context['enquiry'] = enquiry  # Assuming you want to pass the filtered enquiries to the context
+    context['branches'] = branches
+
+
     return render(request,'admin_page/admin_enquiries_view.html',context)
+
+
+def admin_enquiry_detail(request):
+
+    context={}
+
+    if request.method == "POST":
+        enquiry_id=request.POST.get('id')
+
+        context['data']=Enquiry.objects.get(id=enquiry_id)
+
+
+    return render(request, 'admin_page/admin_enquiry_detail.html',context)
+
+
 
 def admin_orders_view(request):
     context = {}
@@ -756,6 +878,22 @@ def admin_orders_view(request):
     context['orders'] = orders
 
     return render(request, 'admin_page/admin_orders_view.html', context)
+
+
+def admin_order_detail(request):
+    context={}
+
+    if request.method == "POST":
+        order_id=request.POST.get('id')
+
+        context['data']=Order.objects.get(id=order_id)
+
+
+    return render(request, 'admin_page/admin_order_detail.html',context)
+
+
+
+
 
 
 

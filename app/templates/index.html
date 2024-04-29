@@ -674,6 +674,12 @@
       <input class="form-control form-enquiry mt-3 text-black" type="email" placeholder="Email" aria-label="default input example" name="email" pattern="[a-z].*[a-z0-9]@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address" required>
       <input class="form-control form-enquiry mt-3 text-black" type="tel" placeholder="Phone" aria-label="default input example" name="phone" pattern="\+[0-9]{2} [0-9]{4} [0-9]{6}" title="Please enter your phone number in the format: +xx xxxx xxxxxx" required>
       <textarea class="form-control form-enquiry mt-3 text-black" id="exampleFormControlTextarea1" cols="40" rows="10" placeholder="Message" name="message" required></textarea>
+      <select class="form-select form-enquiry mt-3 text-black" aria-label="Default select example" name="branch" id="branch" required>
+        <option selected>--Please Choose a Branch--</option>
+        {% for i in branch %}
+        <option value="{{i.name}}">{{i.name}}</option>
+        {% endfor %}
+      </select>
       <div class=" d-flex justify-content-center">
         <button id="submitButton" class="form-btn mt-3 mb-3 rounded" name="save">
           Submit

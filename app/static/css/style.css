@@ -954,6 +954,16 @@ footer{
     margin-bottom: 40px;
   }
 
+  
+.package-price{
+  background-color: #22419c;
+  text-align: center;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 12px 0px;
+}
+
 
 .card{
   width: 100%;

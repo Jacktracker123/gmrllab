@@ -51,6 +51,10 @@ path('admin_contacts_view/',views.admin_contacts_view,name="admin_contacts_view"
 path('admin_enquiries_view/',views.admin_enquiries_view,name="admin_enquiries_view"),
 path('admin_orders_view/',views.admin_orders_view,name="admin_orders_view"),
 path('admin_gallery_view/',views.admin_gallery_view,name="admin_gallery_view"),
+path('admin_enquiry_detail/', views.admin_enquiry_detail, name='admin_enquiry_detail'),
+path('admin_contact_detail',views.admin_contact_detail,name="admin_contact_detail"),
+path('admin_appointment_detail',views.admin_appointment_detail,name="admin_appointment_detail"),
+path('admin_order_detail',views.admin_order_detail,name="admin_order_detail"),
 
 
 

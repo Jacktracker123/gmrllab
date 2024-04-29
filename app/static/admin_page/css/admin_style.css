@@ -271,6 +271,14 @@ a{
   margin-bottom: 50px;
 }
 
+.truncate-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* Number of lines to display */
+  -webkit-line-clamp: 1; /* Adjust the number of lines as needed */
+}
+
 /* Gallery Page */
 
 
@@ -307,7 +315,45 @@ a{
     display: none;
   }
 
+  .wordss {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px; /* Adjust width as needed */
+  }
   
+  .contact-info {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px; /* Adjust spacing between items */
+}
+
+.label {
+    display: inline-block;
+    width: 100px; /* Adjust label width as needed */
+    text-align: right;
+    margin-right: 10px; /* Adjust spacing between label and data */
+}
+
+.data {
+    display: inline-block;
+}
+.message {
+  white-space: pre-wrap;
+}
+
+.table-2{
+  display: none;
+}
+
+.detail-title{
+  font-family: 'Oswald', sans-serif;
+  font-size:50px;
+}
 
   @media only screen and (max-width:992px){
     .small-logo{
@@ -321,5 +367,20 @@ a{
     .nav-link i, .navbar-profile-name{
       color: black;
     }
+
+  }
+
+  @media only screen and (max-width:768px){
+  .content-wrapper-enquiry{
+    padding: 0;
+    margin: 0;
+  }
+.table-1{
+  display: none;
+}
+
+.table-2{
+  display: block;
+}
 
   }

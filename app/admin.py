@@ -7,11 +7,11 @@ class Appointment_Display(admin.ModelAdmin):
 admin.site.register(Appointment,Appointment_Display)
 
 class Contact_Display(admin.ModelAdmin):
-    list_display=['name','email','phone','subject','message']
+    list_display=['name','email','phone','subject','message','branch']
 admin.site.register(Contact,Contact_Display)
 
 class Enquiry_Display(admin.ModelAdmin):
-    list_display=['name','email','phone','message']
+    list_display=['name','email','phone','message','branch']
 admin.site.register(Enquiry,Enquiry_Display)
 
 class Branch_Display(admin.ModelAdmin):

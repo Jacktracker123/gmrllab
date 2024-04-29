@@ -195,6 +195,16 @@
     </p>
 
 </div>
+
+<div class="col-lg-6">
+    <p><select class="form-select c" aria-label="Default select example" name="branch" id="branch" required>
+        <option selected>--Please Choose a Branch--</option>
+        {% for i in branch %}
+        <option value="{{i.name}}">{{i.name}}</option>
+        {% endfor %}
+      </select></p>
+</div>
+<div class="col-lg-6"></div>
 <div class="col-lg-3 col-md-4">
     <button id="submitButton2" class="form-btn mt-3 mb-3 rounded" name="save" type="submit">
         Submit

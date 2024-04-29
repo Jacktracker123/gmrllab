@@ -7,18 +7,7 @@ from .constants import PaymentStatus
 
 
 # Create your models here.
-class Contact(models.Model):
-    name=models.CharField(max_length=255)
-    email=models.CharField(max_length=255)
-    phone=models.CharField(max_length=255)
-    subject=models.CharField(max_length=255)
-    message=models.TextField(max_length=500)
 
-class Enquiry(models.Model):
-    name=models.CharField(max_length=255)
-    email=models.CharField(max_length=255)
-    phone=models.CharField(max_length=255)
-    message=models.TextField(max_length=500)
 
 class Branch(models.Model):
     name=models.CharField(max_length=255,unique=True)
@@ -100,7 +89,22 @@ class Appointment(models.Model):
     message=models.TextField(max_length=255,null=True)
     branch=models.ForeignKey(Branch,on_delete=models.CASCADE)
 
-   
+class Contact(models.Model):
+    name=models.CharField(max_length=255)
+    email=models.CharField(max_length=255)
+    phone=models.CharField(max_length=255)
+    subject=models.CharField(max_length=255)
+    message=models.TextField(max_length=500)
+    branch=models.ForeignKey(Branch,on_delete=models.CASCADE)
+
+
+class Enquiry(models.Model):
+    name=models.CharField(max_length=255)
+    email=models.CharField(max_length=255)
+    phone=models.CharField(max_length=255)
+    message=models.TextField(max_length=500)
+    branch=models.ForeignKey(Branch,on_delete=models.CASCADE)
+
 
 class Profile(models.Model):
     username=models.ForeignKey(User,on_delete=models.CASCADE)
