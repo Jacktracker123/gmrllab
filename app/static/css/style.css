@@ -1741,7 +1741,10 @@ textarea{
 
   @media only screen and (max-width: 992px){
 
-    
+.intro-heading{
+font-size: 44px;
+}
+
 .introduction-section{
   margin-bottom: 180px;
 }
